@@ -1,3 +1,5 @@
 node_modules/
 docs/.vitepress/cache/
 docs/.vitepress/dist/
+# vitepress 构建时在项目根目录生成的临时缓存
+.vitepress/cache/
