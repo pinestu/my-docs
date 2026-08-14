@@ -10,6 +10,9 @@ hero:
     alt: 我的文档
   actions:
     - theme: brand
+      text: 完整搭建教程
+      link: /guide/full-setup-tutorial
+    - theme: alt
       text: 快速开始
       link: /guide/getting-started
     - theme: alt

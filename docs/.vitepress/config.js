@@ -39,6 +39,7 @@ export default defineConfig({
 
     nav: [
       { text: '首页', link: '/' },
+      { text: '搭建教程', link: '/guide/full-setup-tutorial' },
       { text: '指南', link: '/guide/getting-started' },
       {
         text: '示例',
@@ -55,6 +56,12 @@ export default defineConfig({
 
     sidebar: {
       '/guide/': [
+        {
+          text: '教程',
+          items: [
+            { text: '从零搭建文档站（完整教程）', link: '/guide/full-setup-tutorial' },
+          ],
+        },
         {
           text: '指南',
           items: [
