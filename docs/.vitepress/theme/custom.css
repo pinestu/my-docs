@@ -530,6 +530,19 @@
   margin: 0 0 12px;
 }
 
+/* ---------- 首页组件容器：放宽 vp-doc 默认 688px 限制 ---------- */
+.vp-doc:has(.home-widgets) {
+  max-width: 960px;
+}
+.home-widgets {
+  margin-top: 28px;
+}
+.home-widgets > .hitokoto-card,
+.home-widgets > .gh-card {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 /* ---------- 响应式 ---------- */
 @media (max-width: 640px) {
   .gh-card {

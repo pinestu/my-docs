@@ -43,9 +43,13 @@ features:
     details: 完整的 Markdown 语法支持，代码高亮、表格、任务列表、自定义容器一应俱全。
 ---
 
+<div class="home-widgets">
+
 <Hitokoto />
 
 <GitHubRepo />
 
 <ZhihuHot />
+
+</div>
 
