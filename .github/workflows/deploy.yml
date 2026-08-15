@@ -6,6 +6,10 @@ on:
   push:
     branches: [main]
 
+  # 每 6 小时定时构建一次，同步刷新知乎热榜数据
+  schedule:
+    - cron: '0 */6 * * *'
+
   # 允许从 Actions 标签页手动运行此工作流
   workflow_dispatch:
 
@@ -39,6 +43,10 @@ jobs:
         uses: actions/configure-pages@v4
       - name: Install dependencies
         run: npm ci # 或 pnpm install / yarn install / bun install
+      - name: Fetch zhihu hot list from public APIs
+        # 从公开 API（RSSHub 等）抓取知乎热榜，生成 docs/public/hotlist/zhihu.json
+        # 失败不阻断构建（站点继续使用上次数据）
+        run: node scripts/fetch-zhihu-hot.mjs || echo "::warning::知乎热榜抓取失败，将使用上次数据"
       - name: Compute base path
         id: base
         run: |

@@ -42,3 +42,10 @@ features:
     title: 极致 Markdown
     details: 完整的 Markdown 语法支持，代码高亮、表格、任务列表、自定义容器一应俱全。
 ---
+
+<Hitokoto />
+
+<GitHubRepo />
+
+<ZhihuHot />
+

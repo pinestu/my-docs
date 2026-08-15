@@ -91,3 +91,458 @@
 ::-webkit-scrollbar-thumb:hover {
   background: var(--vp-c-brand-1);
 }
+
+/* ============================================================
+   GitHub 风格元素
+   ============================================================ */
+:root {
+  --gh-border: #d0d7de;
+  --gh-border-muted: #d8dee4;
+  --gh-bg: #ffffff;
+  --gh-bg-subtle: #f6f8fa;
+  --gh-bg-hover: #f3f4f6;
+  --gh-fg: #1f2328;
+  --gh-fg-muted: #59636e;
+  --gh-btn-border: rgba(31, 35, 40, 0.15);
+  --gh-green: #1f883d;
+  --gh-green-hover: #1a7f37;
+  --gh-link: #0969da;
+  --gh-rank-bg: #ddf4ff;
+  --gh-rank-fg: #0969da;
+  --gh-shadow: 0 1px 0 rgba(27, 31, 36, 0.04);
+}
+
+.dark {
+  --gh-border: #3d444d;
+  --gh-border-muted: #3d444d;
+  --gh-bg: #151b23;
+  --gh-bg-subtle: #21262d;
+  --gh-bg-hover: #262c36;
+  --gh-fg: #f0f6fc;
+  --gh-fg-muted: #9198a1;
+  --gh-btn-border: rgba(240, 246, 252, 0.1);
+  --gh-green: #238636;
+  --gh-green-hover: #2ea043;
+  --gh-link: #4493f8;
+  --gh-rank-bg: rgba(56, 139, 253, 0.15);
+  --gh-rank-fg: #4493f8;
+  --gh-shadow: 0 1px 0 rgba(1, 4, 9, 0.4);
+}
+
+/* ---------- octicon ---------- */
+.octicon {
+  vertical-align: -3px;
+}
+
+/* ---------- GitHub 风格卡片 ---------- */
+.gh-card {
+  border: 1px solid var(--gh-border);
+  border-radius: 6px;
+  background: var(--gh-bg);
+  color: var(--gh-fg);
+  padding: 20px 24px;
+  margin: 20px 0;
+  box-shadow: var(--gh-shadow);
+  transition: border-color 0.25s;
+}
+.gh-card:hover {
+  border-color: var(--gh-border-muted);
+}
+.gh-card-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* ---------- GitHub 风格按钮 ---------- */
+.gh-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--gh-fg);
+  background-color: var(--gh-bg-subtle);
+  border: 1px solid var(--gh-btn-border);
+  border-radius: 6px;
+  box-shadow: var(--gh-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+  text-decoration: none !important;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+.gh-btn:hover {
+  background-color: var(--gh-bg-hover);
+  border-color: var(--gh-border);
+}
+.gh-btn:disabled {
+  opacity: 0.65;
+  cursor: default;
+}
+.gh-btn-primary {
+  color: #ffffff !important;
+  background-color: var(--gh-green);
+  border-color: rgba(31, 35, 40, 0.15);
+}
+.gh-btn-primary:hover {
+  background-color: var(--gh-green-hover);
+  border-color: rgba(31, 35, 40, 0.15);
+}
+.gh-btn-sm {
+  padding: 2px 10px;
+  font-size: 12px;
+}
+
+/* ---------- GitHub 徽章 ---------- */
+.gh-badge {
+  display: inline-block;
+  padding: 0 8px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+  color: var(--gh-fg);
+  border: 1px solid var(--gh-border);
+  border-radius: 2em;
+  white-space: nowrap;
+}
+
+/* ---------- 仓库卡片 ---------- */
+.gh-repo-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--gh-link);
+  text-decoration: none;
+}
+.gh-repo-name:hover {
+  text-decoration: underline;
+}
+.gh-repo-desc {
+  margin: 8px 0 12px;
+  color: var(--gh-fg-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.gh-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  color: var(--gh-fg-muted);
+}
+.gh-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.gh-stat b {
+  color: var(--gh-fg);
+  font-weight: 600;
+}
+.gh-stat a,
+.gh-stat-lang {
+  color: var(--gh-link);
+}
+.gh-lang-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 2px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+}
+.gh-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.gh-license {
+  margin-left: 6px;
+  font-size: 12px;
+  color: var(--gh-fg-muted);
+  border: 1px solid var(--gh-border);
+  border-radius: 6px;
+  padding: 0 8px;
+  line-height: 18px;
+}
+.gh-updated {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--gh-fg-muted);
+}
+
+/* ---------- shields 徽章行 ---------- */
+.gh-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.gh-badges img {
+  height: 28px;
+  border-radius: 4px;
+  display: block;
+}
+
+/* ---------- 贡献图 ---------- */
+.gh-chart {
+  border: 1px solid var(--gh-border);
+  border-radius: 6px;
+  background: var(--gh-bg-subtle);
+  padding: 12px 14px;
+}
+.gh-chart-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.gh-chart-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gh-fg);
+}
+.gh-chart-link {
+  font-size: 12px;
+  color: var(--gh-link);
+  text-decoration: none;
+}
+.gh-chart-link:hover {
+  text-decoration: underline;
+}
+.gh-chart-img {
+  width: 100%;
+  max-width: 663px;
+  display: block;
+  border-radius: 4px;
+}
+/* 暗色模式下反色贡献图 */
+.dark .gh-chart-img {
+  filter: invert(92%) hue-rotate(180deg);
+}
+.gh-chart-fallback {
+  color: var(--gh-fg-muted);
+  font-size: 13px;
+}
+
+/* ---------- 骨架屏 ---------- */
+.gh-skeleton {
+  display: inline-block;
+  height: 14px;
+  border-radius: 6px;
+  background: linear-gradient(
+    90deg,
+    var(--gh-bg-subtle) 25%,
+    var(--gh-bg-hover) 50%,
+    var(--gh-bg-subtle) 75%
+  );
+  background-size: 200% 100%;
+  animation: gh-shimmer 1.4s infinite;
+  margin: 4px 0;
+}
+@keyframes gh-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* ============================================================
+   每日一言
+   ============================================================ */
+.hitokoto-card {
+  border: 1px solid var(--gh-border);
+  border-left: 3px solid var(--vp-c-brand-1);
+  border-radius: 6px;
+  background: var(--gh-bg);
+  color: var(--gh-fg);
+  padding: 16px 24px;
+  margin: 20px 0;
+  box-shadow: var(--gh-shadow);
+}
+.hitokoto-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gh-fg);
+}
+.hitokoto-sub {
+  font-size: 12px;
+  color: var(--gh-fg-muted);
+  margin-right: auto;
+}
+.hitokoto-refresh {
+  color: var(--gh-link);
+}
+.hitokoto-body {
+  margin: 10px 0 0;
+  padding: 0;
+}
+.hitokoto-quote {
+  margin: 0 0 4px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--gh-fg);
+  font-weight: 500;
+}
+.hitokoto-from {
+  margin: 0;
+  font-size: 13px;
+  color: var(--gh-fg-muted);
+}
+.hitokoto-type {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 0 8px;
+  font-size: 11px;
+  line-height: 18px;
+  border-radius: 2em;
+  background: var(--gh-rank-bg);
+  color: var(--gh-rank-fg);
+  font-weight: 600;
+}
+.hitokoto-error .hitokoto-quote {
+  color: var(--gh-fg-muted);
+}
+
+/* ============================================================
+   知乎热榜
+   ============================================================ */
+.hot-card {
+  margin-bottom: 40px;
+}
+.hot-icon {
+  color: #d4a72c;
+}
+.hot-refresh {
+  color: var(--gh-link);
+}
+.hot-list {
+  list-style: none;
+  margin: 14px 0 8px;
+  padding: 0;
+  counter-reset: hot;
+}
+.hot-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 6px;
+  border-top: 1px solid var(--gh-border-muted);
+  transition: background-color 0.2s;
+}
+.hot-item:first-child {
+  border-top: none;
+}
+.hot-item:hover {
+  background-color: var(--gh-bg-subtle);
+  border-radius: 6px;
+}
+.hot-rank {
+  flex: 0 0 22px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 6px;
+  background: var(--gh-bg-subtle);
+  color: var(--gh-fg-muted);
+  margin-top: 2px;
+}
+.hot-rank-1,
+.hot-rank-2,
+.hot-rank-3 {
+  background: var(--gh-rank-bg);
+  color: var(--gh-rank-fg);
+}
+.hot-main {
+  flex: 1;
+  min-width: 0;
+}
+.hot-title {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--gh-fg);
+  text-decoration: none;
+  word-break: break-all;
+}
+.hot-title:hover {
+  color: var(--gh-link);
+}
+.hot-excerpt {
+  margin: 3px 0 0;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--gh-fg-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.hot-heat {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 12px;
+  color: var(--gh-fg-muted);
+  white-space: nowrap;
+  margin-top: 3px;
+}
+.hot-footer {
+  margin: 10px 0 0;
+  padding-top: 10px;
+  border-top: 1px solid var(--gh-border-muted);
+  font-size: 12px;
+  color: var(--gh-fg-muted);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.hot-skeleton-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 4px;
+}
+.gh-skeleton-badge {
+  flex: 0 0 22px;
+  height: 22px;
+}
+.hot-error {
+  padding: 24px 0;
+  text-align: center;
+  color: var(--gh-fg-muted);
+  font-size: 14px;
+}
+.hot-error p {
+  margin: 0 0 12px;
+}
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 640px) {
+  .gh-card {
+    padding: 14px 16px;
+  }
+  .hitokoto-card {
+    padding: 12px 16px;
+  }
+  .gh-updated {
+    margin-left: 0;
+    width: 100%;
+  }
+  .hot-heat {
+    display: none;
+  }
+}
